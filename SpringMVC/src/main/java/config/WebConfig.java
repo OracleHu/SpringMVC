@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @SuppressWarnings("deprecation")
 @Configuration
 @EnableWebMvc
-@ComponentScan("controllerPackage")
+@ComponentScan(basePackages= {"controllerPackage","dataAcess"})
 public class WebConfig extends WebMvcConfigurerAdapter {
      @Bean
      public ViewResolver viewResolver() {
