@@ -5,43 +5,56 @@ import java.util.Date;
 //test
 
 public class Spittle {
-    private final Long id;
-    private final String message;
-    private final Date time;
-    private Double latitude;
-    private Double longitude;
-    public Spittle(String message,Date time) {
-    	this(message,time,null,null);
-    }
-    public Spittle(String message,Date time,Double longitude,Double latitude) {
-    	this.id=null;
-    	this.message=message;
-    	this.time=time;
-    	this.longitude = longitude;
-    	this.latitude=latitude;
-    }
+	private  Long id;
+	private  String message;
+	private  Date time;
+	private Double latitude;
+	private Double longitude;
+
+	public Spittle(String message, Date time) {
+		this(message, time, null, null);
+	}
+
+	public Spittle(String message, Date time, Double longitude, Double latitude) {
+		this.id = null;
+		this.message = message;
+		this.time = time;
+		this.longitude = longitude;
+		this.latitude = latitude;
+	}
+
 	public Double getLatitude() {
 		return latitude;
 	}
+
 	public void setLatitude(Double latitude) {
 		this.latitude = latitude;
 	}
+
 	public Double getLongitude() {
 		return longitude;
 	}
+
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getMessage() {
 		return message;
 	}
+
 	public Date getTime() {
 		return time;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -53,6 +66,7 @@ public class Spittle {
 		result = prime * result + ((time == null) ? 0 : time.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -89,5 +103,5 @@ public class Spittle {
 			return false;
 		return true;
 	}
-    
+
 }
