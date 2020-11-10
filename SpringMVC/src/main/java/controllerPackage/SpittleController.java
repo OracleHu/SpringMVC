@@ -1,10 +1,13 @@
 package controllerPackage;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import javax.servlet.http.Part;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 
 import data.SpittleRepository;
 
@@ -47,7 +51,7 @@ public class SpittleController {
 	  return "registerForm";
   }
   @RequestMapping(value="/spitter/register",method=RequestMethod.POST)
-  public String processRegister(Spitter spitter) {
+  public String processRegister(@RequestPart("file") Part file,Spitter spitter) {
 	  
 	  spittleRepository.save(spitter);
 	  return "redirect:/spitter/"+spitter.getUsername();

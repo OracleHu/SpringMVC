@@ -1,5 +1,8 @@
 package config;
 
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration.Dynamic;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class SpringMVC_initializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -21,5 +24,7 @@ public class SpringMVC_initializer extends AbstractAnnotationConfigDispatcherSer
 		// TODO Auto-generated method stub
 		return new String[] {"/"};
 	}
-
+    protected void customizeRegistration(Dynamic registration) {
+    	registration.setMultipartConfig(new MultipartConfigElement("D:/tmp"));
+    }
 }

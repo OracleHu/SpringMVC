@@ -12,11 +12,13 @@
 </head>
 <body>
   <h1>Register</h1>
-    <sf:form method="POST" modelAttribute="spitter">
+    <sf:form method="POST" modelAttribute="spitter" enctype="multipart/form-data">
       First Name:<sf:input  path="firstname"/><br/>
       Last Name:<sf:input path="lastname"/><br/>
       Username:<sf:input path="username"/><br/>
       Password:<sf:password path="password" /><br/>
+       <input type="file" name="file" /><br/>
+      
       <input type="submit" value="Register">
     </sf:form>
 </body>
